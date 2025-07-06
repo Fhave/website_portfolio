@@ -1,70 +1,78 @@
+// src/components/Contact.jsx
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('');
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
     setStatus('Sending...');
+
     try {
-      const res = await fetch('https://your-email-server.com/api/send', {
+      await fetch('https://your-email-server.com/api/send', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-      if (res.ok) {
-        setStatus('Message sent successfully!');
-        setForm({ name: '', email: '', message: '' });
-      } else {
-        setStatus('Failed to send message.');
-      }
-    } catch (error) {
-            console.error(error);
-      setStatus('An error occurred. Please try again.');
+      setStatus('Message sent!');
+      setForm({ name: '', email: '', message: '' });
+    } catch (err) {
+      setStatus('Something went wrong.');
     }
   };
 
   return (
-    <section className="py-20 px-8 max-w-xl mx-auto" id="contact">
-      <h3 className="text-3xl font-semibold mb-6 text-center">Contact Me</h3>
+    <section id="contact" className="py-20 px-6 max-w-xl mx-auto">
+      <motion.h2
+        className="text-2xl font-semibold text-accent mb-6 text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+      >
+        Contact Me
+      </motion.h2>
+
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           type="text"
           name="name"
           placeholder="Your Name"
+          required
           value={form.name}
           onChange={handleChange}
-          required
-          className="p-3 rounded bg-zinc-800 border border-zinc-600 text-white"
+          className="p-3 bg-zinc-800 text-white rounded border border-zinc-600"
         />
         <input
           type="email"
           name="email"
           placeholder="Your Email"
+          required
           value={form.email}
           onChange={handleChange}
-          required
-          className="p-3 rounded bg-zinc-800 border border-zinc-600 text-white"
+          className="p-3 bg-zinc-800 text-white rounded border border-zinc-600"
         />
         <textarea
           name="message"
           placeholder="Your Message"
-          value={form.message}
-          onChange={handleChange}
           rows={5}
           required
-          className="p-3 rounded bg-zinc-800 border border-zinc-600 text-white"
+          value={form.message}
+          onChange={handleChange}
+          className="p-3 bg-zinc-800 text-white rounded border border-zinc-600"
         />
-        <button type="submit" className="px-6 py-3 border border-beige text-beige rounded hover:bg-beige hover:text-black transition">
-          Send Message
+        <button
+          type="submit"
+          className="border border-accent text-accent py-2 rounded hover:bg-accent hover:text-black transition"
+        >
+          Send
         </button>
       </form>
-      {status && <p className="mt-4 text-sm text-center">{status}</p>}
+      {status && <p className="text-center text-sm mt-3 text-subtle">{status}</p>}
     </section>
   );
 }
