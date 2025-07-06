@@ -30,7 +30,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 px-6 max-w-xl mx-auto">
       <motion.h2
-        className="text-2xl font-semibold text-accent mb-6 text-center"
+        className="text-3xl font-semibold text-accent mb-6 text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
       >
@@ -45,7 +45,7 @@ export default function Contact() {
           required
           value={form.name}
           onChange={handleChange}
-          className="p-3 bg-zinc-800 text-white rounded border border-zinc-600"
+          className="p-3 bg-zinc-800 text-white rounded border border-zinc-600 placeholder:text-sm"
         />
         <input
           type="email"
@@ -54,7 +54,7 @@ export default function Contact() {
           required
           value={form.email}
           onChange={handleChange}
-          className="p-3 bg-zinc-800 text-white rounded border border-zinc-600"
+          className="p-3 bg-zinc-800 text-white rounded border border-zinc-600 placeholder:text-sm"
         />
         <textarea
           name="message"
@@ -63,7 +63,7 @@ export default function Contact() {
           required
           value={form.message}
           onChange={handleChange}
-          className="p-3 bg-zinc-800 text-white rounded border border-zinc-600"
+          className="p-3 bg-zinc-800 text-white rounded border border-zinc-600 placeholder:text-sm"
         />
         <button
           type="submit"

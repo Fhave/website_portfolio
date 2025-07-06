@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaGitAlt, FaHtml5, FaCss3Alt, FaJs } from 'react-icons/fa';
+import { SiPostgresql, SiNetlify, SiVercel, SiTailwindcss, SiMongodb, SiExpress } from "react-icons/si";
 
 const skills = [
   { icon: <FaHtml5 />, name: 'HTML5' },
@@ -10,13 +11,19 @@ const skills = [
   { icon: <FaReact />, name: 'React' },
   { icon: <FaNodeJs />, name: 'Node.js' },
   { icon: <FaGitAlt />, name: 'Git' },
+  { icon: <SiExpress />, name: 'Express' },
+  { icon: <SiTailwindcss />, name: 'TailwindCSS' },
+  { icon: <SiMongodb />, name: 'MongoDB' },
+  { icon: <SiPostgresql />, name: 'PostgreSQL' },
+  { icon: <SiNetlify />, name: 'Netlify' },
+  { icon: <SiVercel />, name: 'Vercel' },
 ];
 
 export default function Skills() {
   return (
     <section id="skills" className="py-20 px-6 max-w-5xl mx-auto text-center">
       <motion.h2
-        className="text-2xl font-semibold text-accent mb-8"
+        className="text-3xl font-semibold text-accent mb-8"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -28,7 +35,7 @@ export default function Skills() {
         {skills.map((skill, i) => (
           <motion.div
             key={i}
-            className="hover:text-accent transition"
+            className="hover:text-accent transition shadow-sm shadow-gray-900 cursor-pointer"
             whileHover={{ scale: 1.2 }}
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}

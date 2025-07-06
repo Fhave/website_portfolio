@@ -23,7 +23,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6 max-w-6xl mx-auto">
       <motion.h2
-        className="text-2xl font-semibold text-accent mb-8 text-center"
+        className="text-3xl font-semibold text-accent mb-8 text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}

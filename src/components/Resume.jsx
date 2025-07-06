@@ -6,7 +6,7 @@ export default function Resume() {
   return (
     <section id="resume" className="py-20 px-6 text-center">
       <motion.h2
-        className="text-2xl font-semibold text-accent mb-6"
+        className="text-3xl font-semibold text-accent mb-6"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}

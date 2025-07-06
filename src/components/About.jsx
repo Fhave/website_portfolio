@@ -6,7 +6,7 @@ export default function About() {
   return (
     <section id="about" className="py-24 px-6 max-w-4xl mx-auto">
       <motion.h2
-        className="text-2xl font-semibold text-accent mb-6"
+        className="text-3xl font-semibold text-accent mb-6"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
