@@ -32,7 +32,7 @@ export default function Navbar() {
           transition={{ duration: 0.6 }}
           className="text-xl font-bold text-accent tracking-tight"
         >
-          {'<Iyobosa.dev/>'}
+          {'<iyobosa.dev/>'}
         </motion.h1>
 
         {/* Desktop Menu */}

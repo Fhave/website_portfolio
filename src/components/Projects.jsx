@@ -4,18 +4,32 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
-    title: 'Project One',
-    description: 'A modern responsive fullstack web application.',
-    tech: ['React', 'Node.js', 'Express', 'MySQL'],
-    github: '#',
-    demo: '#',
+    title: 'Weventa Ecommerce Website',
+    description: 'A modern responsive ecommerce web application.',
+    tech: ['React', 'Tailwind', 'Vercel', 'Git'],
+    github: 'https://github.com/Fhave/weventa',
+    demo: 'https://weventa.vercel.app/',
   },
   {
-    title: 'Project Two',
-    description: 'An elegant UI component library built from scratch.',
-    tech: ['HTML', 'CSS', 'JS'],
-    github: '#',
-    demo: '#',
+    title: 'Sure Boi Photograhy Website',
+    description: 'A simple portfolio website for a photographer with contact form.',
+    tech: ['React', 'Tailwind', 'Netlify', 'Git'],
+    github: 'https://github.com/Fhave/sure-boi-photography',
+    demo: 'https://sure-boi-photography.netlify.app/',
+  },
+  {
+    title: 'Social Media Dashboard',
+    description: 'Frontend Mentor challange for Responsive Social Media Dashboard',
+    tech: ['Html', 'Css', 'Javascript', 'Git'],
+    github: 'https://github.com/Fhave/Social-Media-Dashboard',
+    demo: 'https://social-media-dashboard-eta-ten.vercel.app/',
+  },
+  {
+    title: 'Simple Email Server',
+    description: 'This was used in other projects for the contact form.',
+    tech: ['Node.js', 'Express', 'Vercel', 'Git'],
+    github: 'https://github.com/Fhave/email_server',
+    demo: 'https://email-server-ochre.vercel.app/',
   },
 ];
 
