@@ -1,35 +1,45 @@
 // src/components/Projects.jsx
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: 'Weventa Ecommerce Website',
-    description: 'A modern responsive ecommerce web application.',
-    tech: ['React', 'Tailwind', 'Vercel', 'Git'],
-    github: 'https://github.com/Fhave/weventa',
-    demo: 'https://weventa.vercel.app/',
+    title: "Weventa Ecommerce Website",
+    description: "A modern responsive ecommerce web application.",
+    tech: ["React", "Tailwind", "Vercel", "Git"],
+    github: "https://github.com/Fhave/weventa",
+    demo: "https://weventa.vercel.app/",
   },
   {
-    title: 'Sure Boi Photograhy Website',
-    description: 'A simple portfolio website for a photographer with contact form.',
-    tech: ['React', 'Tailwind', 'Netlify', 'Git'],
-    github: 'https://github.com/Fhave/sure-boi-photography',
-    demo: 'https://sure-boi-photography.netlify.app/',
+    title: "Sure Boi Photography Website",
+    description:
+      "A simple portfolio website for a photographer with contact form.",
+    tech: ["React", "Tailwind", "Netlify", "Git"],
+    github: "https://github.com/Fhave/sure-boi-photography",
+    demo: "https://sure-boi-photography.netlify.app/",
   },
   {
-    title: 'Social Media Dashboard',
-    description: 'Frontend Mentor challange for Responsive Social Media Dashboard',
-    tech: ['Html', 'Css', 'Javascript', 'Git'],
-    github: 'https://github.com/Fhave/Social-Media-Dashboard',
-    demo: 'https://social-media-dashboard-eta-ten.vercel.app/',
+    title: "Jamzy Studio Photography Website",
+    description:
+      "A simple portfolio website for a photographer with contact form.",
+    tech: ["React", "Tailwind", "Netlify", "Git"],
+    github: "https://github.com/Fhave/jamzy-studio",
+    demo: "https://jamzy-studio.netlify.app/",
   },
   {
-    title: 'Simple Email Server',
-    description: 'This was used in other projects for the contact form.',
-    tech: ['Node.js', 'Express', 'Vercel', 'Git'],
-    github: 'https://github.com/Fhave/email_server',
-    demo: 'https://email-server-ochre.vercel.app/',
+    title: "Social Media Dashboard",
+    description:
+      "Frontend Mentor challange for Responsive Social Media Dashboard",
+    tech: ["Html", "Css", "Javascript", "Git"],
+    github: "https://github.com/Fhave/Social-Media-Dashboard",
+    demo: "https://social-media-dashboard-eta-ten.vercel.app/",
+  },
+  {
+    title: "Simple Email Server",
+    description: "This was used in other projects for the contact form.",
+    tech: ["Node.js", "Express", "Vercel", "Git"],
+    github: "https://github.com/Fhave/email_server",
+    demo: "https://email-server-ochre.vercel.app/",
   },
 ];
 
@@ -64,8 +74,18 @@ export default function Projects() {
               ))}
             </div>
             <div className="flex gap-4">
-              <a href={project.github} className="text-subtle hover:text-accent text-sm">GitHub</a>
-              <a href={project.demo} className="text-subtle hover:text-accent text-sm">Live Demo</a>
+              <a
+                href={project.github}
+                className="text-subtle hover:text-accent text-sm"
+              >
+                GitHub
+              </a>
+              <a
+                href={project.demo}
+                className="text-subtle hover:text-accent text-sm"
+              >
+                Live Demo
+              </a>
             </div>
           </motion.div>
         ))}

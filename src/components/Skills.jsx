@@ -47,7 +47,7 @@ export default function Skills() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.1 }}
-            transition={{ delay: 0.05 * index, type: 'spring', stiffness: 120 }}
+            transition={{ delay: 0 * index, type: 'spring', stiffness: 120 }}
           >
             {skill.icon}
             <figcaption className="text-xs mt-2">{skill.name}</figcaption>

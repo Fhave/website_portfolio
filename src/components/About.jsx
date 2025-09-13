@@ -20,9 +20,11 @@ export default function About() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        I’m a versatile web developer who loves turning ideas into reality with elegant, accessible, and scalable code. My interests span across UI/UX, backend architecture, and building systems that just make sense.
+        I'm a versatile web developer who loves turning ideas into reality with elegant, accessible, and scalable code. My interests span across UI/UX, backend architecture, and building systems that just make sense.
         <br /><br />
-        Whether I’m working on a frontend interaction or backend logic, I bring clean structure, modern tools, and curiosity to every project.
+        I have a strong understanding of web development principles and a keen eye for design. I am always looking for new opportunities to learn and grow as a developer. I am also a quick learner, a hard worker, and a team player.
+        <br /><br />
+        Whether I'm working on a frontend interaction or backend logic, I bring clean structure, modern tools, and curiosity to every project.
       </motion.p>
     </section>
   );

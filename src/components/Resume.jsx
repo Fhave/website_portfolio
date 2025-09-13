@@ -19,9 +19,11 @@ export default function Resume() {
         download
         className="inline-block px-6 py-3 border border-accent text-accent hover:bg-accent hover:text-black rounded transition"
         whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       >
         Download Resume
       </motion.a>
     </section>
   );
 }
+

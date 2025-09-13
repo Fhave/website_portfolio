@@ -30,7 +30,8 @@ export default function Navbar() {
           initial={{ x: -30, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="text-xl font-bold text-accent tracking-tight"
+          className="text-xl font-bold text-accent tracking-tight cursor-pointer"
+          onClick={() => window.location.href = '/'}
         >
           {'<iyobosa.dev/>'}
         </motion.h1>
