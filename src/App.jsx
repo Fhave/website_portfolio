@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <main className="bg-[#0d0d0d] text-[#e5e5e5] font-mono scroll-smooth">
+    <main className="bg-[#022458] text-[#cdcdcd] font-mono scroll-smooth">
       <Navbar />
       <Hero />
       <About />
@@ -22,3 +22,4 @@ export default function App() {
     </main>
   );
 }
+
