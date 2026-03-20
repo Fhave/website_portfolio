@@ -4,11 +4,27 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Weventa Ecommerce Website",
-    description: "A modern responsive ecommerce web application.",
+    title: "Helping Handz Connect NGO Website",
+    description:
+      "A fully responsive web application for a non-profit organization.",
+    tech: ["React", "Tailwind", "Vercel", "Git"],
+    github: "https://github.com/Fhave/helping-handz-connect",
+    demo: "https://www.helpinghandzconnect.org.ng/",
+  },
+  {
+    title: "Weventa E-commerce Website",
+    description: "A modern responsive e-commerce web application.",
     tech: ["React", "Tailwind", "Vercel", "Git"],
     github: "https://github.com/Fhave/weventa",
     demo: "https://weventa.vercel.app/",
+  },
+    {
+    title: "Star Wars Dashboard",
+    description:
+      "A simple portfolio website for a photographer with contact form.",
+    tech: ["React", "Tailwind", "Netlify", "Git"],
+    github: "https://github.com/Fhave/Star-Wars-Dashboard",
+    demo: "https://star-wars-dashboard-omega.vercel.app/dashboard",
   },
   {
     title: "Sure Boi Photography Website",

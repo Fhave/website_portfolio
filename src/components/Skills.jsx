@@ -5,8 +5,9 @@ import {
   FaReact, FaNodeJs, FaGitAlt, FaHtml5, FaCss3Alt, FaJs,
 } from 'react-icons/fa';
 import {
-  SiPostgresql, SiNetlify, SiVercel, SiTailwindcss, SiMongodb, SiExpress,
+  SiPostgresql, SiNetlify, SiVercel, SiTailwindcss, SiMongodb, SiExpress, SiNestjs, SiMysql
 } from "react-icons/si";
+import { RiNextjsLine } from "react-icons/ri";
 
 const skills = [
   { icon: <FaHtml5 />, name: 'HTML5' },
@@ -21,6 +22,9 @@ const skills = [
   { icon: <SiPostgresql />, name: 'PostgreSQL' },
   { icon: <SiNetlify />, name: 'Netlify' },
   { icon: <SiVercel />, name: 'Vercel' },
+  { icon: <RiNextjsLine />, name: 'NextJS'},
+  { icon: <SiNestjs />, name: 'Nestjs'},
+  { icon: <SiMysql />, name: 'MySQL'}
 ];
 
 export default function Skills() {

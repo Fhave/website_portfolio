@@ -23,7 +23,7 @@ export default function Contact() {
       setStatus('Message sent!');
       setForm({ name: '', email: '', message: '' });
     } catch (err) {
-      setStatus('Something went wrong.');
+      setStatus('Something went wrong.', err);
     }
   };
 
