@@ -42,6 +42,14 @@ const projects = [
     github: "https://github.com/Fhave/jamzy-studio",
     demo: "https://jamzy-studio.netlify.app/",
   },
+    {
+    title: "Sample Portfolios",
+    description:
+      "Sample portfolios. Click on the image to see the ones I designed",
+    tech: ["React", "Tailwind", "Netlify", "Git"],
+    github: "https://github.com/Fhave/sample",
+    demo: "https://designxecute-samples.netlify.app/",
+  },
   {
     title: "Social Media Dashboard",
     description:
