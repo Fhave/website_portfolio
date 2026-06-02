@@ -7,7 +7,7 @@ const projects = [
     title: "Helping Handz Connect NGO Website",
     description: "A fully responsive website for a non-profit organization.",
     tech: ["React", "Tailwind", "Vercel", "Git"],
-    github: "https://github.com/Fhave/helping-handz-connect",
+    code: "https://github.com/Fhave/helping-handz-connect",
     link: "https://www.helpinghandzconnect.org.ng/",
   },
   {
@@ -15,31 +15,37 @@ const projects = [
     description:
       "A lightweight mobile-friendly web application that helps judges, participants, and audience members track quiz competitions in real time, even when there is no internet connection",
     tech: ["React", "Mantine", "PWA", "IndexedDB", "Vercel", "Git"],
-    github: "https://github.com/Fhave/quiz-app.git",
+    code: "https://github.com/Fhave/quiz-app.git",
     link: "https://quiz-app-beige-eight-48.vercel.app/",
     article:
       "https://medium.com/@omosiyobo/building-an-offline-first-quiz-tracking-application-with-react-mantine-indexeddb-and-pwa-3aaee2c3cb20",
+  },
+  {
+    title: "FreeCodeCamp SQL and Bash Challenges",
+    description: "Solutions to the SQL and Bash challenges on freecodecamp.",
+    tech: ["Bash", "PostgreSQL", "Git"],
+    code: "https://github.com/Fhave/freecodecamp.git",
   },
   {
     title: "Be Loved Website",
     description:
       "A fully responsive website based on discovering daily acts of kindness for yourself, your partner, and your world.",
     tech: ["HTML", "CSS", "JavaScript", "Vercel", "Git"],
-    github: "https://github.com/Fhave/Be_Loved.git",
+    code: "https://github.com/Fhave/Be_Loved.git",
     link: "https://be-loved.vercel.app/",
   },
   {
     title: "Weventa E-commerce Website",
     description: "A modern responsive e-commerce web application.",
     tech: ["React", "Tailwind", "Vercel", "Git"],
-    github: "https://github.com/Fhave/weventa",
+    code: "https://github.com/Fhave/weventa",
     link: "https://weventa.vercel.app/",
   },
   {
     title: "Star Wars Dashboard",
     description: "A simple dashboard with star wars information",
     tech: ["React", "Tailwind", "Netlify", "Git"],
-    github: "https://github.com/Fhave/Star-Wars-Dashboard",
+    code: "https://github.com/Fhave/Star-Wars-Dashboard",
     link: "https://star-wars-dashboard-omega.vercel.app/dashboard",
   },
   {
@@ -47,7 +53,7 @@ const projects = [
     description:
       "A simple portfolio website for a photographer with contact form.",
     tech: ["React", "Tailwind", "Netlify", "Git"],
-    github: "https://github.com/Fhave/sure-boi-photography",
+    code: "https://github.com/Fhave/sure-boi-photography",
     link: "https://sure-boi-photography.netlify.app/",
   },
   {
@@ -55,7 +61,7 @@ const projects = [
     description:
       "A simple portfolio website for a photographer with contact form.",
     tech: ["React", "Tailwind", "Netlify", "Git"],
-    github: "https://github.com/Fhave/jamzy-studio",
+    code: "https://github.com/Fhave/jamzy-studio",
     link: "https://jamzy-studio.netlify.app/",
   },
   {
@@ -63,7 +69,7 @@ const projects = [
     description:
       "Sample portfolios. Click on the image to see the ones I designed",
     tech: ["React", "Tailwind", "Netlify", "Git"],
-    github: "https://github.com/Fhave/sample",
+    code: "https://github.com/Fhave/sample",
     link: "https://designxecute-samples.netlify.app/",
   },
   {
@@ -71,14 +77,14 @@ const projects = [
     description:
       "Frontend Mentor challenge for Responsive Social Media Dashboard",
     tech: ["Html", "Css", "Javascript", "Git"],
-    github: "https://github.com/Fhave/Social-Media-Dashboard",
+    code: "https://github.com/Fhave/Social-Media-Dashboard",
     link: "https://social-media-dashboard-eta-ten.vercel.app/",
   },
   {
     title: "Simple Email Server",
     description: "This was used in other projects for the contact form.",
     tech: ["Node.js", "Express", "Vercel", "Git"],
-    github: "https://github.com/Fhave/email_server",
+    code: "https://github.com/Fhave/email_server",
     link: "https://email-server-ochre.vercel.app/",
   },
 ];
@@ -114,12 +120,12 @@ export default function Projects() {
               ))}
             </div>
             <div className="flex gap-4">
-              {project.github && (
+              {project.code && (
                 <a
-                  href={project.github}
+                  href={project.code}
                   className="text-subtle hover:text-accent hover:underline text-sm"
                 >
-                  GitHub
+                  Code Link
                 </a>
               )}
               {project.link && (
