@@ -1,6 +1,7 @@
 // src/components/Contact.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import axios from 'axios';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -32,15 +33,28 @@ export default function Contact() {
     setStatus('Sending...');
 
     try {
-      await fetch('https://your-email-server.com/api/send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+      await axios.post('https://email-server-ochre.vercel.app/send-email', {
+        user: {
+          from: 'omosiyobo@gmail.com',
+          to: form.email,
+          subject: 'Contact Form',
+          text: 'We have received your message',
+        },
+        owner: {
+          from: 'omosiyobo@gmail.com',
+          to: 'omosiyobo@gmail.com',
+          subject: 'New Form Submission',
+          text: `You received a new form submission:\n\n${form.message}`,
+        },
       });
+
       setStatus('Message sent successfully!');
+      setTimeout(() => setStatus(''), 3000);
       setForm({ name: '', email: '', message: '' });
     } catch (err) {
       setStatus('Something went wrong. Please try again.');
+      console.log(err);
+      setTimeout(() => setStatus(''), 3000);
     }
   };
 
