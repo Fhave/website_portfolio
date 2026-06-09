@@ -25,7 +25,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black border-b border-zinc-800 shadow-sm">
-      <div className="flex justify-between items-center max-w-6xl mx-auto px-4 py-3">
+      <div className="flex justify-between items-center max-w-6xl mx-auto px-4 py-5">
         <motion.h1
           initial={{ x: -30, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}

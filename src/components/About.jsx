@@ -20,11 +20,11 @@ export default function About() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        I'm a versatile web developer who loves turning ideas into reality with elegant, accessible, and scalable code. My interests span across UI/UX, backend architecture, and building systems that just make sense.
+        I am a versatile Full-Stack Engineer driven by the challenge of turning complex ideas into elegant, accessible, and scalable digital realities. My expertise bridges the gap between intuitive UI/UX design and robust backend architecture—building systems that are as powerful as they are intuitive.
         <br /><br />
-        I have a strong understanding of web development principles and a keen eye for design. I am always looking for new opportunities to learn and grow as a developer. I am also a quick learner, a hard worker, and a team player.
+        With a strong foundation in modern web development principles and a sharp eye for design, I approach every project with a commitment to clean structure and performant code. I thrive in collaborative environments where I can solve real-world problems and continuously push the boundaries of my technical skill set.
         <br /><br />
-        Whether I'm working on a frontend interaction or backend logic, I bring clean structure, modern tools, and curiosity to every project.
+        Whether crafting seamless frontend interactions or engineering secure backend logic, I bring curiosity, modern tools, and an absolute focus on quality to everything I build.
       </motion.p>
     </section>
   );
