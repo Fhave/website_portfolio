@@ -24,41 +24,48 @@ export default function Navbar() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black border-b border-zinc-800 shadow-sm">
-      <div className="flex justify-between items-center max-w-6xl mx-auto px-4 py-5">
-        <motion.h1
-          initial={{ x: -30, opacity: 0 }}
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-6xl z-50 bg-black/80 backdrop-blur-md border border-zinc-800 rounded-xl shadow-lg">
+      <div className="flex justify-between items-center mx-auto px-5 py-3">
+        <motion.button
+          initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          className="text-xl font-bold text-accent tracking-tight cursor-pointer"
-          onClick={() => window.location.href = '/'}
+          transition={{ duration: 0.5 }}
+          className="flex items-center gap-3 text-accent font-semibold text-lg cursor-pointer"
+          onClick={() => (window.location.href = '/')}
+          aria-label="Home"
         >
-          {'<iyobosa.dev/>'}
-        </motion.h1>
+          <span className="text-xl">{'<'} </span>
+          <span className="tracking-tight">iyobosa.dev</span>
+          <span className="text-xl"> {'/>'}</span>
+        </motion.button>
 
         {/* Desktop Menu */}
-        <div className="hidden sm:flex gap-6 items-center">
-          {links.map((link, i) => (
-            <motion.a
-              key={link.name}
-              href={link.href}
-              className="text-sm text-subtle hover:text-accent transition"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * i }}
-            >
-              {link.name}
-            </motion.a>
-          ))}
-          <div className="flex gap-3 ml-2 text-subtle">
+        <div className="hidden sm:flex items-center gap-8">
+          <div className="flex gap-6">
+            {links.map((link, i) => (
+              <motion.a
+                key={link.name}
+                href={link.href}
+                className="text-sm text-subtle hover:text-accent transition-colors"
+                initial={{ opacity: 0, y: -6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.08 * i }}
+              >
+                {link.name}
+              </motion.a>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-3 text-subtle">
             {socials.map((s, i) => (
               <motion.a
                 key={i}
                 href={s.href}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-accent transition"
-                whileHover={{ scale: 1.1 }}
+                className="p-2 rounded-md hover:text-accent hover:bg-white/5 transition"
+                whileHover={{ scale: 1.05 }}
+                aria-label={`Open social ${i}`}
               >
                 {s.icon}
               </motion.a>
@@ -67,41 +74,47 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="sm:hidden text-accent text-xl" onClick={toggleMenu}>
+        <button
+          className="sm:hidden text-accent text-2xl p-2 rounded-md hover:bg-white/5"
+          onClick={toggleMenu}
+          aria-expanded={isOpen}
+          aria-label="Toggle menu"
+        >
           {isOpen ? <FaTimes /> : <FaBars />}
-        </div>
+        </button>
       </div>
 
       {/* Mobile Dropdown */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden bg-black border-t border-zinc-800 py-4 px-6"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            className="sm:hidden bg-black/95 border-t border-zinc-800 px-6 py-4 rounded-b-xl"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25 }}
           >
-            <div className="flex flex-col gap-4 text-subtle">
+            <div className="flex flex-col gap-3 text-subtle">
               {links.map((link, i) => (
                 <motion.a
                   key={i}
                   href={link.href}
                   onClick={closeMenu}
-                  className="hover:text-accent text-sm"
-                  whileHover={{ scale: 1.02 }}
+                  className="py-2 px-3 rounded-md hover:text-accent hover:bg-white/3 transition"
+                  whileHover={{ x: 4 }}
                 >
                   {link.name}
                 </motion.a>
               ))}
-              <div className="flex gap-4 mt-2">
+
+              <div className="flex gap-4 mt-1">
                 {socials.map((s, i) => (
                   <a
                     key={i}
                     href={s.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:text-accent transition text-lg"
+                    className="hover:text-accent transition text-xl p-2 rounded-md hover:bg-white/5"
                   >
                     {s.icon}
                   </a>
