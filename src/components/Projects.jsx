@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "Money-Route",
+    description: "A financial management website",
+    tech: ["Vue", "CSS", "Vercel", "Git"],
+    code: "https://github.com/Fhave/money-route",
+    link: "https://stirring-piroshki-a98863.netlify.app/",
+  },
+  {
     title: "Helping Handz Connect NGO Website",
     description: "A fully responsive website for a non-profit organization.",
     tech: ["React", "Tailwind", "Vercel", "Git"],
@@ -20,12 +27,12 @@ const projects = [
     article:
       "https://medium.com/@omosiyobo/building-an-offline-first-quiz-tracking-application-with-react-mantine-indexeddb-and-pwa-3aaee2c3cb20",
   },
-  {
-    title: "FreeCodeCamp SQL and Bash Challenges",
-    description: "Solutions to the SQL and Bash challenges on freecodecamp.",
-    tech: ["Bash", "PostgreSQL", "Git"],
-    code: "https://github.com/Fhave/freecodecamp.git",
-  },
+  // {
+  //   title: "FreeCodeCamp SQL and Bash Challenges",
+  //   description: "Solutions to the SQL and Bash challenges on freecodecamp.",
+  //   tech: ["Bash", "PostgreSQL", "Git"],
+  //   code: "https://github.com/Fhave/freecodecamp.git",
+  // },
   {
     title: "Be Loved Website",
     description:
@@ -120,7 +127,7 @@ export default function Projects() {
             whileHover={{ scale: 1.01 }}
             transition={{ delay: 0.1 * i, type: "spring", stiffness: 120 }}
           >
-            <div className="mb-6 flex items-start justify-between gap-4">
+            <div className="mb-4 flex items-start justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-beige/70">
                   Project
@@ -131,11 +138,11 @@ export default function Projects() {
               </div>
             </div>
 
-            <p className="text-sm leading-6 text-subtle mb-5">
+            <p className="text-sm leading-6 text-subtle mb-3">
               {project.description}
             </p>
 
-            <div className="mb-6 flex flex-wrap gap-2">
+            <div className="mb-4 flex flex-wrap gap-2">
               {project.tech.map((tech, j) => (
                 <span
                   key={j}
@@ -147,7 +154,7 @@ export default function Projects() {
             </div>
 
             <div className="mt-auto flex flex-wrap gap-3">
-              {project.code && (
+              {/* {project.code && (
                 <a
                   href={project.code}
                   target="_blank"
@@ -156,7 +163,7 @@ export default function Projects() {
                 >
                   Code
                 </a>
-              )}
+              )} */}
               {project.link && (
                 <a
                   href={project.link}

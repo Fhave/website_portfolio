@@ -1,30 +1,44 @@
 // src/components/Skills.jsx
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 import {
-  FaReact, FaNodeJs, FaGitAlt, FaHtml5, FaCss3Alt, FaJs,
-} from 'react-icons/fa';
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaVuejs,
+} from "react-icons/fa";
 import {
-  SiPostgresql, SiNetlify, SiVercel, SiTailwindcss, SiMongodb, SiExpress, SiNestjs, SiMysql
+  SiPostgresql,
+  SiNetlify,
+  SiVercel,
+  SiTailwindcss,
+  SiMongodb,
+  SiExpress,
+  SiNestjs,
+  SiMysql,
 } from "react-icons/si";
 import { RiNextjsLine } from "react-icons/ri";
 
 const skills = [
-  { icon: <FaHtml5 />, name: 'HTML5' },
-  { icon: <FaCss3Alt />, name: 'CSS3' },
-  { icon: <FaJs />, name: 'JavaScript' },
-  { icon: <FaReact />, name: 'React' },
-  { icon: <FaNodeJs />, name: 'Node.js' },
-  { icon: <FaGitAlt />, name: 'Git' },
-  { icon: <SiExpress />, name: 'Express' },
-  { icon: <SiTailwindcss />, name: 'TailwindCSS' },
-  { icon: <SiMongodb />, name: 'MongoDB' },
-  { icon: <SiPostgresql />, name: 'PostgreSQL' },
-  { icon: <SiNetlify />, name: 'Netlify' },
-  { icon: <SiVercel />, name: 'Vercel' },
-  { icon: <RiNextjsLine />, name: 'NextJS' },
-  { icon: <SiNestjs />, name: 'Nestjs' },
-  { icon: <SiMysql />, name: 'MySQL' }
+  { icon: <FaHtml5 />, name: "HTML5" },
+  { icon: <FaCss3Alt />, name: "CSS3" },
+  { icon: <FaJs />, name: "JavaScript" },
+  { icon: <FaReact />, name: "React.js" },
+  { icon: <FaVuejs />, name: "Vue.js" },
+  { icon: <FaNodeJs />, name: "Node.js" },
+  { icon: <FaGitAlt />, name: "Git" },
+  { icon: <SiExpress />, name: "Express" },
+  { icon: <SiTailwindcss />, name: "TailwindCSS" },
+  { icon: <SiMongodb />, name: "MongoDB" },
+  { icon: <SiPostgresql />, name: "PostgreSQL" },
+  { icon: <SiNetlify />, name: "Netlify" },
+  { icon: <SiVercel />, name: "Vercel" },
+  { icon: <RiNextjsLine />, name: "NextJS" },
+  { icon: <SiNestjs />, name: "Nestjs" },
+  { icon: <SiMysql />, name: "MySQL" },
 ];
 
 export default function Skills() {
@@ -46,7 +60,8 @@ export default function Skills() {
           Skills
         </h2>
         <p className="mx-auto max-w-2xl text-subtle text-sm md:text-base leading-7">
-          A curated collection of technologies I use to build modern apps with performance, accessibility, and scalability in mind.
+          A curated collection of technologies I use to build modern apps with
+          performance, accessibility, and scalability in mind.
         </p>
       </motion.div>
 
@@ -64,7 +79,7 @@ export default function Skills() {
             initial={{ opacity: 0, y: 20, scale: 0.98 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             whileHover={{ scale: 1.05 }}
-            transition={{ delay: index * 0.04, type: 'spring', stiffness: 120 }}
+            transition={{ delay: index * 0.04, type: "spring", stiffness: 120 }}
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-4xl text-accent mb-4">
               {skill.icon}
