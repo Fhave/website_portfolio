@@ -69,7 +69,7 @@ export default function About() {
           <motion.p variants={itemVariants}>
             I am a versatile Full-Stack Engineer driven by the challenge of
             turning complex ideas into elegant, accessible, and scalable digital
-            realities. My expertise bridges the gap between intuitive UI/UX
+            realities. My expertise bridges the gap between intuitive Frontend
             design and robust backend architecture—building systems that are as
             powerful as they are intuitive.
           </motion.p>
