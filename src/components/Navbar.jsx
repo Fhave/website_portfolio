@@ -1,20 +1,35 @@
 // src/components/Navbar.jsx
-import React, { useState } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaBars, FaTimes } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import {
+  FaBars,
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+  FaTimes,
+} from "react-icons/fa";
 
 const links = [
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Resume', href: '#resume' },
-  { name: 'Contact', href: '#contact' },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Articles", href: "#articles" },
+  { name: "Resume", href: "#resume" },
+  { name: "Contact", href: "#contact" },
 ];
 
 const socials = [
-  { icon: <FaGithub />, href: 'https://github.com/Fhave' },
-  { icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/iyobosa-omoruyi' },
-  { icon: <FaEnvelope />, href: 'mailto:omosiyobo@gmail.com' },
+  { icon: <FaGithub />, href: "https://github.com/Fhave", label: "GitHub" },
+  {
+    icon: <FaLinkedin />,
+    href: "https://www.linkedin.com/in/iyobosa-omoruyi",
+    label: "LinkedIn",
+  },
+  {
+    icon: <FaEnvelope />,
+    href: "mailto:omosiyobo@gmail.com",
+    label: "Email",
+  },
 ];
 
 export default function Navbar() {
@@ -24,23 +39,24 @@ export default function Navbar() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[95%] max-w-6xl z-50 bg-black/80 backdrop-blur-md border border-zinc-800 rounded-xl shadow-lg">
-      <div className="flex justify-between items-center mx-auto px-5 py-3">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] sm:w-[95%] max-w-6xl z-50 bg-black/80 backdrop-blur-md border border-zinc-800 rounded-xl shadow-lg transition-all duration-300">
+      <div className="flex justify-between items-center mx-auto px-4 sm:px-6 py-3">
+        {/* Brand Logo */}
         <motion.button
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center gap-3 text-accent font-semibold text-lg cursor-pointer"
-          onClick={() => (window.location.href = '/')}
+          className="flex items-center gap-2 sm:gap-3 text-accent font-semibold text-base sm:text-lg cursor-pointer select-none"
+          onClick={() => (window.location.href = "/")}
           aria-label="Home"
         >
-          <span className="text-xl">{'<'} </span>
+          <span className="text-lg sm:text-xl">{"<"}</span>
           <span className="tracking-tight">iyobosa.dev</span>
-          <span className="text-xl"> {'/>'}</span>
+          <span className="text-lg sm:text-xl">{"/ >"}</span>
         </motion.button>
 
-        {/* Desktop Menu */}
-        <div className="hidden sm:flex items-center gap-8">
+        {/* Desktop Menu (Visible on Large screens) */}
+        <div className="hidden lg:flex items-center gap-8">
           <div className="flex gap-6">
             {links.map((link, i) => (
               <motion.a
@@ -56,7 +72,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center gap-3 text-subtle">
+          <div className="flex items-center gap-2 text-subtle">
             {socials.map((s, i) => (
               <motion.a
                 key={i}
@@ -65,7 +81,7 @@ export default function Navbar() {
                 rel="noreferrer"
                 className="p-2 rounded-md hover:text-accent hover:bg-white/5 transition"
                 whileHover={{ scale: 1.05 }}
-                aria-label={`Open social ${i}`}
+                aria-label={s.label}
               >
                 {s.icon}
               </motion.a>
@@ -73,9 +89,9 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile / Tablet Menu Button */}
         <button
-          className="sm:hidden text-accent text-2xl p-2 rounded-md hover:bg-white/5"
+          className="lg:hidden text-accent text-xl sm:text-2xl p-2 rounded-md hover:bg-white/5 transition active:scale-95"
           onClick={toggleMenu}
           aria-expanded={isOpen}
           aria-label="Toggle menu"
@@ -84,37 +100,38 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Dropdown Drawer */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="sm:hidden bg-black/95 border-t border-zinc-800 px-6 py-4 rounded-b-xl"
+            className="lg:hidden bg-black/95 border-t border-zinc-800 px-5 py-4 rounded-b-xl max-h-[80vh] overflow-y-auto"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.25 }}
+            transition={{ duration: 0.2 }}
           >
-            <div className="flex flex-col gap-3 text-subtle">
-              {links.map((link, i) => (
+            <div className="flex flex-col gap-1 text-subtle">
+              {links.map((link) => (
                 <motion.a
-                  key={i}
+                  key={link.name}
                   href={link.href}
                   onClick={closeMenu}
-                  className="py-2 px-3 rounded-md hover:text-accent hover:bg-white/3 transition"
-                  whileHover={{ x: 4 }}
+                  className="py-3 px-4 rounded-lg hover:text-accent hover:bg-white/5 text-base font-medium transition"
+                  whileTap={{ x: 4 }}
                 >
                   {link.name}
                 </motion.a>
               ))}
 
-              <div className="flex gap-4 mt-1">
+              <div className="flex items-center justify-around mt-4 pt-4 border-t border-zinc-800">
                 {socials.map((s, i) => (
                   <a
                     key={i}
                     href={s.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:text-accent transition text-xl p-2 rounded-md hover:bg-white/5"
+                    className="hover:text-accent transition text-2xl p-3 rounded-lg hover:bg-white/5"
+                    aria-label={s.label}
                   >
                     {s.icon}
                   </a>
